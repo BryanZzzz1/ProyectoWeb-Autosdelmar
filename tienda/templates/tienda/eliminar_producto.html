@@ -1,0 +1,38 @@
+{% extends "ProyectoWebApp/base.html" %}
+{% load static %}
+
+{% block contenido %}
+<h1 style="visibility: hidden;">dawdaw </h1>
+<h1 style="visibility: hidden;">dawdaw </h1>
+<h1 style="visibility: hidden;">dawdaw </h1>
+<h1 style="visibility: hidden;">dawdaw </h1>
+<h1 style="visibility: hidden;">dawdaw </h1>
+<h1 style="visibility: hidden;">dawdaw </h1>
+
+<body style="background-color: blue;">
+    
+
+<div class="container">
+    <h2>Confirmar Eliminación</h2>
+    <div class="card">
+        <div class="card-body" style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">
+            <h5 class="card-title">{{ producto.nombre }}</h5>
+            <p class="card-text">Descripción: {{ producto.descripcion }}</p>
+            <p class="card-text">Precio: {{ producto.precio }}</p>
+            <p class="card-text">Stock: {{ producto.stock }}</p>
+        </div>
+        <div class="card-footer">
+            <form action="{% url 'tienda:eliminar_producto' producto.id %}" method="post">
+                {% csrf_token %}
+                <p>¿Estás seguro de que deseas eliminar este producto?</p>
+                <input type="submit" class="btn btn-danger" value="Eliminar">
+                <a href="{% url 'tienda:listar_productos' %}" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<h1 style="visibility: hidden;">dawdaw </h1>
+<h1 style="visibility: hidden;">dawdaw </h1>
+<h1 style="visibility: hidden;">dawdaw </h1>
+{% endblock %}

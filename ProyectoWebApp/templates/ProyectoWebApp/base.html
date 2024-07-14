@@ -27,7 +27,11 @@
     <ul class="nav_items">
         <li class="nav_item">
             <a style="font-family: Poppins, sans-serif; text-decoration: none;" href="{% url 'Home' %}" class="nav_link">Inicio</a>
-            <a style="font-family: Poppins, sans-serif; text-decoration: none;" href="{% url 'Tienda' %}" class="nav_link">Vehiculos</a>
+
+            <a href="{% url 'Tienda' %}" class="nav_link">Vehiculos</a>
+
+            <a style="font-family: Poppins, sans-serif; text-decoration: none;" href="{% url 'listar_productos' %}" class="nav_link">lista de vehiculos</a>
+
             
             {% if user.is_authenticated %}
             ¡Bienvenido, {{ user.username }}! &nbsp; &nbsp;
@@ -68,7 +72,9 @@
                 <h3 style="font-family: Poppins, sans-serif;">Liks Rapidos</h3>
                  <ul class="list">
                     <li><a style="font-family: Poppins, sans-serif; text-decoration: none; color: #ffffff; text-decoration: none; " href="{% url 'Home' %}">inicio</a></li>
-                    <li><a style=" font-family: Poppins, sans-serif;text-decoration: none; color: #ffffff; text-decoration: none;" href="{% url 'Tienda' %}">Vehiculos</a></li>
+                    <a href="{% url 'Tienda' %}" >Vehiculos</a>
+
+                    <li><a style="font-family: Poppins, sans-serif; text-decoration: none; color: #ffffff; text-decoration: none; " href="{% url 'listar_productos' %}">lista de productos</a></li>
                     
                     
                  </ul>

@@ -1,0 +1,27 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% block contenido %}
+
+<body style="background-color: rgb(255, 123, 0);">
+    
+
+<div class="container">
+    <h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+    <h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+    <h2>Crear Nuevo Producto</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">Guardar Producto</button>
+    </form>
+</div>
+{% endblock %}
+</body>

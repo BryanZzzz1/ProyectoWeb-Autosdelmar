@@ -1,0 +1,20 @@
+<!-- tienda/editar_producto.html -->
+
+{% extends "ProyectoWebApp/base.html" %}
+{% load static %}
+
+{% block contenido %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>{{ form.instance.nombre|default_if_none:"Nuevo Producto" }}</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="{% url 'Tienda' %}" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

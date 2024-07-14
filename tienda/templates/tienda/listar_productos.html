@@ -1,0 +1,53 @@
+{% extends "ProyectoWebApp/base.html" %}
+{% load static %}
+
+{% block contenido %}
+<h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+<div class="container">
+    <h1>Listado de Productos</h1>
+<body style="background-color: rgb(68, 0, 255);">
+    
+
+    <a href="{% url 'tienda:crear_producto' %}" class="btn btn-primary mb-3">Crear Producto</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in producto %}
+            <tr>
+                <td>{{ producto.id }}</td>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.categorias.nombre }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>
+                    <a href="{% url 'tienda:actualizar_producto' producto.id %}" class="btn btn-sm btn-info">Editar</a>
+                    <a href="{% url 'tienda:eliminar_producto' producto.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No hay productos disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+<h1 style="visibility: hidden;">texto invisible</h1>
+{% endblock %}
+</body>
